@@ -16,15 +16,12 @@ function Tweet(props) {
   return (
     <div className="tweet">
       <ProfileImage imageProp={image} />
-
       <div className="body">
         <div className="top">
           <User nameProp={name} handleProp={handle} />
           <Timestamp timestampProp={timestamp} />
         </div>
-
         <Message messageProp={message} />
-
         <Actions />
       </div>
 
