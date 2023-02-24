@@ -1,3 +1,9 @@
+import ProfileImage from "./ProfileImage";
+import Timestamp from "./Timestamp";
+import User from "./User";
+import Message from "./Message";
+import Actions from "./Actions";
+
 function Tweet(props) {
   const {
     tweet: {
@@ -9,27 +15,17 @@ function Tweet(props) {
 
   return (
     <div className="tweet">
-      <img src={image} className="profile" alt="profile" />
+      <ProfileImage imageProp={image} />
 
       <div className="body">
         <div className="top">
-          <span className="user">
-            <span className="name">{name}</span>
-            <span className="handle">@{handle}</span>
-          </span>
-
-          <span className="timestamp">{timestamp}</span>
+          <User nameProp={name} handleProp={handle} />
+          <Timestamp timestampProp={timestamp} />
         </div>
 
-        <p className="message">{message} 🚀</p>
+        <Message messageProp={message} />
 
-        <div className="actions">
-          {/* Font Awesome icons */}
-          <i className="far fa-comment"></i>
-          <i className="fas fa-retweet"></i>
-          <i className="far fa-heart"></i>
-          <i className="fas fa-share"></i>
-        </div>
+        <Actions />
       </div>
 
       <i className="fas fa-ellipsis-h"></i>
